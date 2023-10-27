@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 //hit the home route to check connectivity
 async function getHome() {
-  const response = await fetch("http://localhost:8000", {
+  const response = await fetch("http://ec2-13-211-172-32.ap-southeast-2.compute.amazonaws.com:8000", {
     mode: "cors",
   });
   const data = await response.json();
@@ -12,7 +12,7 @@ async function getHome() {
 
 //hit the get repo route
 async function getRepos() {
-  const response = await fetch("http://localhost:8000/github/repos", {
+  const response = await fetch("http://ec2-13-211-172-32.ap-southeast-2.compute.amazonaws.com:8000/github/repos", {
     mode: "cors",
   });
   const data = await response.json();
@@ -22,7 +22,7 @@ async function getRepos() {
 
 //hit the clone repo route
 async function cloneRepo(name, url) {
-  const response = await fetch("http://localhost:8000/github/clone-repo", {
+  const response = await fetch("http://ec2-13-211-172-32.ap-southeast-2.compute.amazonaws.com:8000/github/clone-repo", {
     mode: "cors",
     method: "POST",
     headers: { "Content-Type": "application/json" },
